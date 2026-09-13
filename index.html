@@ -6,28 +6,43 @@
 <title>Marblism Q4: Activaciones</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gaegu:wght@400;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
+  @font-face{
+    font-family:"Slussen";
+    src:url("fonts/Slussen-Compressed-Black.woff2") format("woff2");
+    font-weight:900;font-display:swap;
+  }
+  @font-face{
+    font-family:"Slussen";
+    src:url("fonts/Slussen-Compressed-Bold.woff2") format("woff2");
+    font-weight:700;font-display:swap;
+  }
   :root{
-    --paper:#f4ecdd;
-    --paper2:#efe4cf;
-    --ink:#3a332b;
-    --muted:#8a7f6f;
-    --teal:#7fa99b;
-    --teal-soft:#dcebe4;
-    --orange:#e0964f;
-    --orange-soft:#f9e3c8;
-    --pink:#d98f8f;
-    --pink-soft:#f6dede;
-    --purple:#9d8ec7;
-    --shadow:6px 6px 0 rgba(58,51,43,.9);
+    --display:"Slussen","Inter",sans-serif;
+    --serif:"Instrument Serif",Georgia,serif;
+    --sans:"Inter",-apple-system,sans-serif;
+    --paper:#f6f2e8;
+    --paper2:#efe9d8;
+    --ink:#141414;
+    --muted:#7a746a;
+    --yellow:#ffd400;
+    --yellow-soft:#ffeea6;
+    --teal:#141414;
+    --teal-soft:#ffeea6;
+    --orange:#c79b00;
+    --orange-soft:#ffd400;
+    --pink:#141414;
+    --pink-soft:#ffeea6;
+    --purple:#141414;
+    --shadow:6px 6px 0 rgba(20,20,20,.92);
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
     background:var(--paper);
     color:var(--ink);
-    font-family:"Space Mono",monospace;
+    font-family:var(--sans);
     line-height:1.6;
     overflow-x:hidden;
     -webkit-font-smoothing:antialiased;
@@ -44,7 +59,7 @@
     box-shadow:4px 4px 0 rgba(58,51,43,.9);
   }
   .lang button{
-    font-family:"Space Mono",monospace;font-weight:700;font-size:13px;
+    font-family:var(--sans);font-weight:700;font-size:12px;letter-spacing:.06em;
     border:2px solid transparent;background:transparent;color:var(--ink);
     padding:4px 10px;border-radius:9px;cursor:pointer;transition:all .15s;
   }
@@ -59,30 +74,30 @@
 
   header{margin-bottom:34px;position:relative}
   .kicker{
-    display:inline-block;font-family:"Gaegu",cursive;font-weight:700;font-size:20px;
+    display:inline-block;font-family:var(--serif);font-style:italic;font-size:17px;letter-spacing:.02em;
     background:var(--pink-soft);border:2px solid var(--ink);color:var(--ink);
     padding:2px 16px;border-radius:999px;transform:rotate(-2deg);
     box-shadow:3px 3px 0 rgba(58,51,43,.9);margin-bottom:20px;
   }
   h1{
-    font-family:"Gaegu",cursive;font-weight:700;
-    font-size:clamp(52px,9vw,92px);line-height:.95;letter-spacing:-.01em;margin-bottom:10px;
+    font-family:var(--display);font-weight:900;text-transform:uppercase;
+    font-size:clamp(44px,8.5vw,112px);line-height:.88;letter-spacing:.005em;margin-bottom:14px;
   }
   h1 .hl{
     background:linear-gradient(transparent 55%, var(--orange-soft) 55%);
     display:inline-block;transform:rotate(-1deg);
   }
-  .sub{color:var(--muted);font-size:16px;max-width:600px}
+  .sub{color:var(--muted);font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.45;max-width:600px}
 
   /* marquee */
   .marquee{
     border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
-    background:var(--paper2);overflow:hidden;white-space:nowrap;
+    background:var(--yellow);overflow:hidden;white-space:nowrap;
     margin:38px -24px;transform:rotate(-1deg) scale(1.02);
   }
   .marquee-inner{
     display:inline-block;padding:10px 0;
-    font-family:"Gaegu",cursive;font-weight:700;font-size:22px;
+    font-family:var(--display);font-weight:900;font-size:20px;text-transform:uppercase;letter-spacing:.06em;
     animation:slide 22s linear infinite;
   }
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -96,8 +111,8 @@
   .hstat:hover{transform:rotate(-1.5deg) translateY(-4px)}
   .hstat:nth-child(odd){transform:rotate(.8deg)}
   .hstat:nth-child(odd):hover{transform:rotate(2deg) translateY(-4px)}
-  .hstat .n{font-size:32px;font-weight:700;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
-  .hstat .l{font-family:"Gaegu",cursive;font-size:18px;color:var(--muted);line-height:1.2;margin-top:2px}
+  .hstat .n{font-family:var(--display);font-weight:900;font-size:44px;line-height:1;letter-spacing:.01em;font-variant-numeric:tabular-nums}
+  .hstat .l{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);line-height:1.5;margin-top:8px}
   .hstat.c1 .n{color:var(--teal)} .hstat.c2 .n{color:var(--orange)} .hstat.c3 .n{color:var(--pink)} .hstat.c4 .n{color:var(--purple)}
 
   /* cards */
@@ -118,14 +133,14 @@
   .card.act2 .tape{background:var(--orange-soft);left:auto;right:40px;transform:rotate(4deg)}
 
   .badge{
-    display:inline-block;font-family:"Gaegu",cursive;font-weight:700;font-size:17px;
-    border:2px solid var(--ink);padding:1px 12px;border-radius:8px;margin-bottom:14px;
+    display:inline-block;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.12em;
+    border:2px solid var(--ink);padding:4px 12px;border-radius:8px;margin-bottom:16px;
     transform:rotate(-1.5deg);
   }
   .badge.b1{background:var(--teal-soft)}
   .badge.b2{background:var(--orange-soft)}
-  h2{font-family:"Gaegu",cursive;font-weight:700;font-size:clamp(30px,4.4vw,42px);line-height:1.02;margin-bottom:6px}
-  .tagline{color:var(--muted);font-size:15px;margin-bottom:22px}
+  h2{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:clamp(36px,5.4vw,54px);line-height:.92;letter-spacing:.005em;margin-bottom:10px}
+  .tagline{color:var(--muted);font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.45;margin-bottom:22px}
 
   .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:22px 0}
   .stat{
@@ -133,15 +148,15 @@
     transition:transform .18s;
   }
   .stat:hover{transform:scale(1.05) rotate(1.5deg)}
-  .stat .n{font-size:26px;font-weight:700;font-variant-numeric:tabular-nums}
-  .stat .l{font-family:"Gaegu",cursive;font-size:17px;color:var(--muted);line-height:1.15}
+  .stat .n{font-family:var(--display);font-weight:900;font-size:34px;line-height:1;font-variant-numeric:tabular-nums}
+  .stat .l{font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);line-height:1.5;margin-top:6px}
   .stat.hero{background:var(--ink);border-style:solid}
-  .stat.hero .n{color:var(--paper)}
+  .stat.hero .n{color:var(--yellow)}
   .stat.hero .l{color:var(--paper2)}
 
   h3{
-    font-family:"Gaegu",cursive;font-weight:700;font-size:24px;margin:30px 0 12px;
-    display:flex;align-items:center;gap:10px;
+    font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.16em;margin:32px 0 12px;
+    display:flex;align-items:center;gap:12px;
   }
   h3::after{content:"";flex:1;border-top:2px dashed var(--ink);opacity:.35}
 
@@ -164,8 +179,31 @@
   }
   .note::before{content:"★";position:absolute;top:-14px;left:18px;background:var(--pink-soft);border:2px solid var(--ink);border-radius:50%;width:26px;height:26px;display:grid;place-items:center;font-size:13px}
 
+  .card.soon{
+    border-style:dashed;background:var(--paper2);text-align:center;
+    box-shadow:none;padding:44px 34px;
+  }
+  .card.soon h2{margin-bottom:2px}
+  .card.soon .bign{
+    font-family:var(--display);font-size:clamp(56px,9vw,88px);font-weight:900;color:var(--teal);
+    font-variant-numeric:tabular-nums;letter-spacing:.01em;margin:10px 0 2px;
+  }
+  .card.soon .badge{transform:rotate(1.5deg);background:var(--pink-soft)}
+  .blink{display:inline-block;animation:blink 1.2s steps(2) infinite}
+  @keyframes blink{50%{opacity:0}}
+  .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .btn{
+    display:inline-block;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.1em;
+    text-decoration:none;color:var(--ink);background:#fff;border:2px solid var(--ink);border-radius:10px;
+    padding:10px 18px;box-shadow:4px 4px 0 rgba(58,51,43,.9);transition:transform .15s;
+  }
+  .btn:hover{transform:translate(-2px,-2px) rotate(-1deg)}
+  .btn.primary{background:var(--ink);color:var(--paper)}
+  .mock{margin:24px 0 4px;border:2px solid var(--ink);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+  .mock img,.mock video{display:block;width:100%;height:auto}
+  .mockcap{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:14px;margin:10px 4px 18px;text-align:right}
   footer{
-    text-align:center;color:var(--muted);font-family:"Gaegu",cursive;font-size:19px;margin-top:10px;
+    text-align:center;color:var(--muted);font-family:var(--serif);font-style:italic;font-size:17px;margin-top:10px;
   }
   @media (max-width:600px){
     .doodle{display:none}
@@ -192,16 +230,17 @@
   <header>
     <span class="kicker">Marblism · Q4 2026</span>
     <h1><span data-i18n="title1">Activaciones</span> <span class="hl">Q4</span></h1>
-    <p class="sub" data-i18n="sub">Dos activaciones de marca para el trimestre. Presupuesto, meta de usuarios y plan de contenido de cada una.</p>
+    <p class="sub" data-i18n="sub">Las activaciones de marca del trimestre: presupuesto, meta de usuarios y plan de contenido de cada una.</p>
   </header>
 
   <div class="marquee"><div class="marquee-inner" id="marquee"></div></div>
 
   <div class="heroStats">
     <div class="hstat c1"><div class="n" data-count="50000" data-prefix="$">$0</div><div class="l" data-i18n="hs1">Presupuesto total Q4</div></div>
-    <div class="hstat c2"><div class="n" data-count="150" data-prefix="$">$0</div><div class="l" data-i18n="hs2">CPA objetivo</div></div>
-    <div class="hstat c3"><div class="n" data-count="334">0</div><div class="l" data-i18n="hs3">Usuarios para break-even total</div></div>
-    <div class="hstat c4"><div class="n" data-count="500" data-suffix="+">0</div><div class="l" data-i18n="hs4">Meta de usuarios Q4</div></div>
+    <div class="hstat c2"><div class="n" data-count="25500" data-prefix="$">$0</div><div class="l" data-i18n="hs2">Comprometido en las activaciones 01 y 02</div></div>
+    <div class="hstat c3"><div class="n" data-count="7000" data-prefix="$">$0</div><div class="l" data-i18n="hs5">Viaje opcional: work from San Diego</div></div>
+    <div class="hstat c1"><div class="n" data-count="170">0</div><div class="l" data-i18n="hs3">Usuarios para break-even</div></div>
+    <div class="hstat c4"><div class="n" data-count="17500" data-prefix="$">$0</div><div class="l" data-i18n="hs4">Disponible para más ideas</div></div>
   </div>
 
   <!-- Activación 1 -->
@@ -210,6 +249,9 @@
     <span class="badge b1" data-i18n="a1badge">Activación 01 · Café</span>
     <h2 data-i18n="a1title">Pop-up: café gratis para emprendedores</h2>
     <p class="tagline" data-i18n="a1tag">Una semana completa regalando café a founders y emprendedores. Cada café es una conversación, una demo y un registro.</p>
+
+    <figure class="mock"><img src="images/mockup-popup.png" alt="Mockup del pop-up de café Marblism"></figure>
+    <p class="mockcap" data-i18n="cap1">Mockup del pop-up: booth negro, vasos amarillos y standees de los personajes.</p>
 
     <div class="stats">
       <div class="stat"><div class="n" data-count="18000" data-prefix="$">$0</div><div class="l" data-i18n="a1s1">Costo de la activación</div></div>
@@ -240,6 +282,9 @@
       <li><span class="phase" data-i18n="p4">Post (semana +1):</span> <span data-i18n="c4">video recap, carrusel con los mejores founders entrevistados y secuencia de email de onboarding a todos los registros.</span></li>
       <li><span class="phase" data-i18n="p5">Medición:</span> <span data-i18n="c5">UTM propio para el QR del evento, código exclusivo del pop-up y conteo de registros por día para el CPA real al cierre.</span></li>
     </ul>
+
+    <figure class="mock"><img src="images/mockup-merch.png" alt="Mockup de merch Marblism: vasos amarillos, mugs, gorra, stickers y tote"></figure>
+    <p class="mockcap" data-i18n="cap2">Los vasos amarillos y la merch de la merch store: mugs, gorra, stickers y tote.</p>
   </section>
 
   <!-- Activación 2 -->
@@ -249,11 +294,14 @@
     <h2 data-i18n="a2title">Gear de pickleball Marblism en San Diego</h2>
     <p class="tagline" data-i18n="a2tag">Palas, gorras y merch Marblism en las canchas de San Diego, donde juega la comunidad tech y founder de la ciudad.</p>
 
+    <figure class="mock"><img src="images/mockup-pickleball.png" alt="Mockup del gear de pickleball Marblism en cancha de San Diego"></figure>
+    <p class="mockcap" data-i18n="cap3">El gear: palas, bolas amarillas, gorra y toalla Marblism en cancha de San Diego.</p>
+
     <div class="stats">
-      <div class="stat"><div class="n" data-count="32000" data-prefix="$">$0</div><div class="l" data-i18n="a2s1">Presupuesto de la activación</div></div>
+      <div class="stat"><div class="n" data-count="7500" data-prefix="$">$0</div><div class="l" data-i18n="a2s1">Presupuesto de la activación</div></div>
       <div class="stat"><div class="n" data-count="150" data-prefix="$">$0</div><div class="l" data-i18n="a2s2">CPA objetivo</div></div>
-      <div class="stat hero"><div class="n" data-count="214">0</div><div class="l" data-i18n="a2s3">Usuarios para break-even</div></div>
-      <div class="stat"><div class="n" data-count="320">0</div><div class="l" data-i18n="a2s4">Meta de usuarios</div></div>
+      <div class="stat hero"><div class="n" data-count="50">0</div><div class="l" data-i18n="a2s3">Usuarios para break-even</div></div>
+      <div class="stat"><div class="n" data-count="75">0</div><div class="l" data-i18n="a2s4">Meta de usuarios</div></div>
     </div>
 
     <h3 data-i18n="a2h1">Concepto</h3>
@@ -273,6 +321,42 @@
     <p class="note" data-i18n="a2note">Con $32,000 de presupuesto y CPA de $150, el break-even es de 214 usuarios. La meta operativa es 320 registros, que dejaría el CPA en $100. Pendiente de definir: canchas o clubes específicos y fechas.</p>
   </section>
 
+  <!-- Activación 3: Work from San Diego -->
+  <section class="card">
+    <div class="tape"></div>
+    <span class="badge b1" data-i18n="a4badge">Activación 03 · Opcional</span>
+    <h2 data-i18n="a4title">Work from San Diego</h2>
+    <p class="tagline" data-i18n="a4tag">El equipo se instala una semana en San Diego durante las activaciones y todo el contenido se produce en sitio.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="n" data-count="7000" data-prefix="$">$0</div><div class="l" data-i18n="a4s1">Costo del viaje</div></div>
+      <div class="stat"><div class="n">1</div><div class="l" data-i18n="a4s2">Semana en sitio</div></div>
+      <div class="stat"><div class="n" data-count="6" data-suffix="+">0</div><div class="l" data-i18n="a4s3">Personas del equipo</div></div>
+    </div>
+
+    <h3 data-i18n="a4h1">El plan</h3>
+    <ul>
+      <li><span class="phase" data-i18n="w1a">El equipo:</span> <span data-i18n="w1b">Mateo, Jesús, Fin, Paulina, el crew de filmmaking y posiblemente Ulric.</span></li>
+      <li><span class="phase" data-i18n="w2a">La idea:</span> <span data-i18n="w2b">trabajar la semana completa desde San Diego mientras corren el pop-up de café y la activación de pickleball.</span></li>
+      <li><span class="phase" data-i18n="w3a">Por qué vale:</span> <span data-i18n="w3b">las activaciones generan el contenido y el equipo en sitio lo captura en calidad y volumen: reels, BTS, entrevistas y vlogs del equipo.</span></li>
+    </ul>
+
+    <p class="note" data-i18n="a4note">Opcional pero muy bueno para contenido. Los $7,000 son presupuesto de producción y viaje, no cuentan contra el CPA de adquisición de las activaciones 01 y 02.</p>
+  </section>
+
+  <!-- Próximas activaciones -->
+  <section class="card soon">
+    <span class="badge" data-i18n="a3badge">Próximamente</span>
+    <h2>More ideas to come <span class="blink">✦</span></h2>
+    <div class="bign" data-count="17500" data-prefix="$">$0</div>
+    <p class="tagline" data-i18n="a3tag">Presupuesto disponible del Q4 para las siguientes activaciones. Ideas en cocina.</p>
+    <p style="font-weight:600;font-size:13px" data-i18n="a3ulric">Ulric: este es tu espacio. Deja tus ideas aquí abajo y las sumamos al plan.</p>
+    <div class="btnrow">
+      <a class="btn primary" href="https://github.com/jesusmlpd/marblism-q4/issues/new?title=%F0%9F%92%A1%20Idea%3A%20&labels=idea" target="_blank" rel="noopener" data-i18n="btnAdd">💡 Agregar una idea</a>
+      <a class="btn" href="https://github.com/jesusmlpd/marblism-q4/issues" target="_blank" rel="noopener" data-i18n="btnSee">Ver ideas del equipo</a>
+    </div>
+  </section>
+
   <footer data-i18n="footer">Marblism · Activaciones Q4 · Documento interno para compartir ✦</footer>
 </div>
 
@@ -280,8 +364,21 @@
 const I18N = {
   es: {
     title1:"Activaciones",
-    sub:"Dos activaciones de marca para el trimestre. Presupuesto, meta de usuarios y plan de contenido de cada una.",
-    hs1:"Presupuesto total Q4", hs2:"CPA objetivo", hs3:"Usuarios para break-even total", hs4:"Meta de usuarios Q4",
+    sub:"Las activaciones de marca del trimestre: presupuesto, meta de usuarios y plan de contenido de cada una.",
+    hs1:"Presupuesto total Q4", hs2:"Comprometido en las activaciones 01 y 02", hs3:"Usuarios para break-even", hs4:"Disponible para más ideas", hs5:"Viaje opcional: work from San Diego",
+    a4badge:"Activación 03 · Opcional", a4title:"Work from San Diego",
+    a4tag:"El equipo se instala una semana en San Diego durante las activaciones y todo el contenido se produce en sitio.",
+    a4s1:"Costo del viaje", a4s2:"Semana en sitio", a4s3:"Personas del equipo",
+    a4h1:"El plan",
+    w1a:"El equipo:", w1b:"Mateo, Jesús, Fin, Paulina, el crew de filmmaking y posiblemente Ulric.",
+    w2a:"La idea:", w2b:"trabajar la semana completa desde San Diego mientras corren el pop-up de café y la activación de pickleball.",
+    w3a:"Por qué vale:", w3b:"las activaciones generan el contenido y el equipo en sitio lo captura en calidad y volumen: reels, BTS, entrevistas y vlogs del equipo.",
+    a4note:"Opcional pero muy bueno para contenido. Los $7,000 son presupuesto de producción y viaje, no cuentan contra el CPA de adquisición de las activaciones 01 y 02.",
+    a3ulric:"Ulric: este es tu espacio. Deja tus ideas aquí abajo y las sumamos al plan.",
+    btnAdd:"💡 Agregar una idea", btnSee:"Ver ideas del equipo",
+    cap1:"Mockup del pop-up: booth negro, vasos amarillos y standees de los personajes.",
+    cap2:"Los vasos amarillos y la merch de la merch store: mugs, gorra, stickers y tote.",
+    cap3:"El gear: palas, bolas amarillas, gorra y toalla Marblism en cancha de San Diego.",
     a1badge:"Activación 01 · Café",
     a1title:"Pop-up: café gratis para emprendedores",
     a1tag:"Una semana completa regalando café a founders y emprendedores. Cada café es una conversación, una demo y un registro.",
@@ -311,14 +408,29 @@ const I18N = {
     k1:"Reels de partidos con el gear en cancha y founders locales jugando.",
     k2:'Serie "pitch entre puntos": el founder pitchea su startup en lo que dura un rally.',
     k3:"UGC de la comunidad posteando su gear, con hashtag propio de la activación.",
-    a2note:"Con $32,000 de presupuesto y CPA de $150, el break-even es de 214 usuarios. La meta operativa es 320 registros, que dejaría el CPA en $100. Pendiente de definir: canchas o clubes específicos y fechas.",
+    a2note:"Con $7,500 de presupuesto y CPA de $150, el break-even es de 50 usuarios. La meta operativa es 75 registros, que dejaría el CPA en $100. Pendiente de definir: canchas o clubes específicos y fechas.",
+    a3badge:"Próximamente",
+    a3tag:"Presupuesto disponible del Q4 para las siguientes activaciones. Ideas en cocina.",
     footer:"Marblism · Activaciones Q4 · Documento interno para compartir ✦",
     marquee:"CAFÉ GRATIS ☕ FREE COFFEE ☕ CAFÉ GRATUIT ☕ PICKLEBALL 🏓 SAN DIEGO 🌴 Q4 ✦ "
   },
   en: {
     title1:"Activations",
-    sub:"Two brand activations for the quarter. Budget, user targets and content plan for each one.",
-    hs1:"Total Q4 budget", hs2:"Target CPA", hs3:"Users for total break-even", hs4:"Q4 user goal",
+    sub:"The quarter's brand activations: budget, user targets and content plan for each one.",
+    hs1:"Total Q4 budget", hs2:"Committed to activations 01 and 02", hs3:"Users for break-even", hs4:"Left for more ideas", hs5:"Optional trip: work from San Diego",
+    a4badge:"Activation 03 · Optional", a4title:"Work from San Diego",
+    a4tag:"The team sets up in San Diego for a week during the activations and all the content gets produced on site.",
+    a4s1:"Trip cost", a4s2:"Week on site", a4s3:"Team members",
+    a4h1:"The plan",
+    w1a:"The team:", w1b:"Mateo, Jesús, Fin, Paulina, the filmmaking crew and possibly Ulric.",
+    w2a:"The idea:", w2b:"work the full week from San Diego while the coffee pop-up and the pickleball activation are running.",
+    w3a:"Why it's worth it:", w3b:"the activations generate the content and the team on site captures it in quality and volume: reels, BTS, interviews and team vlogs.",
+    a4note:"Optional but great for content. The $7,000 is production and travel budget, it does not count against the acquisition CPA of activations 01 and 02.",
+    a3ulric:"Ulric: this is your space. Drop your ideas below and we add them to the plan.",
+    btnAdd:"💡 Add an idea", btnSee:"See the team's ideas",
+    cap1:"Pop-up mockup: black booth, yellow cups and character standees.",
+    cap2:"The yellow cups and the merch store lineup: mugs, cap, stickers and tote.",
+    cap3:"The gear: paddles, yellow balls, cap and Marblism towel on a San Diego court.",
     a1badge:"Activation 01 · Coffee",
     a1title:"Pop-up: free coffee for entrepreneurs",
     a1tag:"A full week giving away coffee to founders and entrepreneurs. Every coffee is a conversation, a demo and a signup.",
@@ -348,14 +460,29 @@ const I18N = {
     k1:"Match reels with the gear on court and local founders playing.",
     k2:'"Pitch between points" series: a founder pitches their startup in the length of a rally.',
     k3:"Community UGC posting their gear, with the activation's own hashtag.",
-    a2note:"With a $32,000 budget and a $150 CPA, break-even is 214 users. The operating goal is 320 signups, which would put the CPA at $100. Still to define: specific courts or clubs and dates.",
+    a2note:"With a $7,500 budget and a $150 CPA, break-even is 50 users. The operating goal is 75 signups, which would put the CPA at $100. Still to define: specific courts or clubs and dates.",
+    a3badge:"Coming soon",
+    a3tag:"Q4 budget still available for the next activations. Ideas cooking.",
     footer:"Marblism · Q4 Activations · Internal doc to share ✦",
     marquee:"FREE COFFEE ☕ CAFÉ GRATIS ☕ CAFÉ GRATUIT ☕ PICKLEBALL 🏓 SAN DIEGO 🌴 Q4 ✦ "
   },
   fr: {
     title1:"Activations",
-    sub:"Deux activations de marque pour le trimestre. Budget, objectif d'utilisateurs et plan de contenu pour chacune.",
-    hs1:"Budget total Q4", hs2:"CPA cible", hs3:"Utilisateurs pour le break-even total", hs4:"Objectif d'utilisateurs Q4",
+    sub:"Les activations de marque du trimestre : budget, objectif d'utilisateurs et plan de contenu pour chacune.",
+    hs1:"Budget total Q4", hs2:"Engagé sur les activations 01 et 02", hs3:"Utilisateurs pour le break-even", hs4:"Restant pour d'autres idées", hs5:"Voyage optionnel : work from San Diego",
+    a4badge:"Activation 03 · Optionnelle", a4title:"Work from San Diego",
+    a4tag:"L'équipe s'installe une semaine à San Diego pendant les activations et tout le contenu est produit sur place.",
+    a4s1:"Coût du voyage", a4s2:"Semaine sur place", a4s3:"Membres de l'équipe",
+    a4h1:"Le plan",
+    w1a:"L'équipe :", w1b:"Mateo, Jesús, Fin, Paulina, le crew de tournage et peut-être Ulric.",
+    w2a:"L'idée :", w2b:"travailler toute la semaine depuis San Diego pendant que tournent le pop-up café et l'activation pickleball.",
+    w3a:"Pourquoi ça vaut le coup :", w3b:"les activations génèrent le contenu et l'équipe sur place le capture en qualité et en volume : reels, BTS, interviews et vlogs d'équipe.",
+    a4note:"Optionnel mais excellent pour le contenu. Les 7 000 $ sont un budget de production et de voyage, ils ne comptent pas dans le CPA d'acquisition des activations 01 et 02.",
+    a3ulric:"Ulric : c'est ton espace. Dépose tes idées ci-dessous et on les ajoute au plan.",
+    btnAdd:"💡 Ajouter une idée", btnSee:"Voir les idées de l'équipe",
+    cap1:"Mockup du pop-up : stand noir, gobelets jaunes et silhouettes des personnages.",
+    cap2:"Les gobelets jaunes et le merch de la boutique : mugs, casquette, stickers et tote bag.",
+    cap3:"L'équipement : raquettes, balles jaunes, casquette et serviette Marblism sur un court de San Diego.",
     a1badge:"Activation 01 · Café",
     a1title:"Pop-up : café gratuit pour les entrepreneurs",
     a1tag:"Une semaine entière de café offert aux founders et entrepreneurs. Chaque café est une conversation, une démo et une inscription.",
@@ -385,7 +512,9 @@ const I18N = {
     k1:"Reels de matchs avec l'équipement sur le court et des founders locaux qui jouent.",
     k2:"Série « pitch entre les points » : le founder pitche sa startup le temps d'un échange.",
     k3:"UGC de la communauté qui poste son équipement, avec un hashtag propre à l'activation.",
-    a2note:"Avec un budget de 32 000 $ et un CPA de 150 $, le break-even est de 214 utilisateurs. L'objectif opérationnel est 320 inscriptions, ce qui mettrait le CPA à 100 $. Reste à définir : courts ou clubs précis et dates.",
+    a2note:"Avec un budget de 7 500 $ et un CPA de 150 $, le break-even est de 50 utilisateurs. L'objectif opérationnel est 75 inscriptions, ce qui mettrait le CPA à 100 $. Reste à définir : courts ou clubs précis et dates.",
+    a3badge:"Bientôt",
+    a3tag:"Budget Q4 encore disponible pour les prochaines activations. Des idées en cuisine.",
     footer:"Marblism · Activations Q4 · Document interne à partager ✦",
     marquee:"CAFÉ GRATUIT ☕ FREE COFFEE ☕ CAFÉ GRATIS ☕ PICKLEBALL 🏓 SAN DIEGO 🌴 Q4 ✦ "
   }
