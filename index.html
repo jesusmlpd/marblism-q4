@@ -66,10 +66,10 @@
   }
   h1{
     font-family:var(--display);font-weight:900;text-transform:uppercase;
-    font-size:clamp(64px,14vw,168px);line-height:.84;letter-spacing:.004em;
-    margin:0 0 24px;
+    font-size:clamp(46px,11.5vw,132px);line-height:.98;letter-spacing:.004em;
+    margin:0 0 22px;
   }
-  h1 .q4{background:var(--yellow);padding:0 .06em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  h1 .q4{background:var(--yellow);padding:0 .08em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
   .sub{
     font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.45;
     color:var(--ink);max-width:520px;margin-bottom:56px;
@@ -104,7 +104,8 @@
     display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     border:1px solid var(--ink);border-top:0;
   }
-  .leg{padding:12px 14px 10px;border-left:1px solid var(--line)}
+  .leg{padding:12px 14px 10px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:7px}
+  .leg .v{margin-top:auto}
   .leg:first-child{border-left:0}
   .leg .k{display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
   .leg .k::before{content:"";width:9px;height:9px;border:1px solid var(--ink);flex:none}
@@ -137,7 +138,7 @@
   }
   h2{
     font-family:var(--display);font-weight:900;text-transform:uppercase;
-    font-size:clamp(38px,7vw,72px);line-height:.88;letter-spacing:.004em;
+    font-size:clamp(36px,6.6vw,68px);line-height:.97;letter-spacing:.004em;
   }
   .tagline{
     font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45;color:var(--muted);
@@ -210,6 +211,16 @@
   }
   .ideas .tagline{color:#b9b5a9;margin:6px auto 26px;max-width:460px}
   .ideas .ulric{font-size:13.5px;font-weight:600;color:#fff;max-width:400px;margin:0 auto}
+  .ideaform{max-width:460px;margin:28px auto 0;display:grid;gap:12px;text-align:left}
+  .fi{
+    background:#1d1d1b;border:1px solid #3f3f3a;color:#fff;
+    padding:13px 15px;font-family:var(--sans);font-size:14px;width:100%;
+  }
+  .fi::placeholder{color:#8b877c}
+  .fi:focus{outline:2px solid var(--yellow);outline-offset:0;border-color:var(--yellow)}
+  textarea.fi{resize:vertical;min-height:110px}
+  .ideaform .btn{cursor:pointer;font-family:var(--sans);justify-self:center;min-width:220px;text-align:center}
+  .thanks{margin-top:18px;color:var(--yellow);font-weight:600;font-size:14px}
   .btnrow{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px}
   .btn{
     display:inline-block;font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.14em;
@@ -454,16 +465,23 @@
   </section>
 
   <!-- Ideas -->
-  <section class="ideas rev">
+  <section class="ideas rev" id="ideas">
     <span class="actlabel" data-i18n="a3badge">Próximamente</span>
     <h2>More ideas to come</h2>
     <div class="bign" data-count="5500" data-prefix="$">$0</div>
     <p class="tagline" data-i18n="a3tag">Presupuesto disponible del Q4 para las siguientes activaciones. Ideas en cocina.</p>
-    <p class="ulric" data-i18n="a3ulric">Ulric: este es tu espacio. Deja tus ideas aquí abajo y las sumamos al plan.</p>
-    <div class="btnrow">
-      <a class="btn primary" href="https://github.com/jesusmlpd/marblism-q4/issues/new?title=Idea%3A%20&labels=idea" target="_blank" rel="noopener" data-i18n="btnAdd">Agregar una idea</a>
-      <a class="btn" href="https://github.com/jesusmlpd/marblism-q4/issues" target="_blank" rel="noopener" data-i18n="btnSee">Ver ideas del equipo</a>
-    </div>
+    <p class="ulric" data-i18n="a3ulric">Ulric: este es tu espacio. Escribe tu idea aquí y le llega directo a Jesús por correo.</p>
+    <form class="ideaform" action="https://formsubmit.co/315af0f28bc392cb40c46c5748ab2866" method="POST">
+      <input type="hidden" name="_subject" value="Idea Q4 Marblism">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+      <input type="hidden" name="_next" value="https://jesusmlpd.github.io/marblism-q4/?idea=ok#ideas">
+      <input class="fi" type="text" name="nombre" data-i18n-ph="fName" placeholder="Tu nombre" required>
+      <textarea class="fi" name="idea" data-i18n-ph="fIdea" placeholder="Tu idea para el Q4..." required></textarea>
+      <button class="btn primary" type="submit" data-i18n="fSend">Enviar idea</button>
+    </form>
+    <p class="thanks" id="thanks" hidden data-i18n="fThanks">Recibida. Tu idea ya está en el correo de Jesús.</p>
   </section>
 
   <footer data-i18n="footer">Marblism · Activaciones Q4 · Documento interno para compartir</footer>
@@ -530,8 +548,9 @@ const I18N = {
     a4note:"Opcional pero muy bueno para contenido. Los $7,000 son presupuesto de producción y viaje, no cuentan contra el CPA de adquisición de las activaciones 01 y 02.",
     a3badge:"Próximamente",
     a3tag:"Presupuesto disponible del Q4 para las siguientes activaciones. Ideas en cocina.",
-    a3ulric:"Ulric: este es tu espacio. Deja tus ideas aquí abajo y las sumamos al plan.",
-    btnAdd:"Agregar una idea", btnSee:"Ver ideas del equipo",
+    a3ulric:"Ulric: este es tu espacio. Escribe tu idea aquí y le llega directo a Jesús por correo.",
+    fName:"Tu nombre", fIdea:"Tu idea para el Q4...", fSend:"Enviar idea",
+    fThanks:"Recibida. Tu idea ya está en el correo de Jesús.",
     cap1:"El pop-up dentro de Moniker Coffee: banner Marblism, vasos amarillos y coworking lleno de founders.",
     cap2:"La merch oficial de la tienda: playera pop-art, hoodie, gorra y vasos amarillos.",
     cap3:"El gear: pala Marblism, bolas amarillas y toalla en cancha de San Diego.",
@@ -598,8 +617,9 @@ const I18N = {
     a4note:"Optional but great for content. The $7,000 is production and travel budget, it does not count against the acquisition CPA of activations 01 and 02.",
     a3badge:"Coming soon",
     a3tag:"Q4 budget still available for the next activations. Ideas cooking.",
-    a3ulric:"Ulric: this is your space. Drop your ideas below and we add them to the plan.",
-    btnAdd:"Add an idea", btnSee:"See the team's ideas",
+    a3ulric:"Ulric: this is your space. Write your idea here and it lands straight in Jesús's inbox.",
+    fName:"Your name", fIdea:"Your idea for Q4...", fSend:"Send idea",
+    fThanks:"Got it. Your idea is already in Jesús's inbox.",
     cap1:"The pop-up inside Moniker Coffee: Marblism banner, yellow cups and a coworking space full of founders.",
     cap2:"The official store merch: pop-art tee, hoodie, cap and yellow cups.",
     cap3:"The gear: Marblism paddle, yellow balls and towel on a San Diego court.",
@@ -666,8 +686,9 @@ const I18N = {
     a4note:"Optionnel mais excellent pour le contenu. Les 7 000 $ sont un budget de production et de voyage, ils ne comptent pas dans le CPA d'acquisition des activations 01 et 02.",
     a3badge:"Bientôt",
     a3tag:"Budget Q4 encore disponible pour les prochaines activations. Des idées en cuisine.",
-    a3ulric:"Ulric : c'est ton espace. Dépose tes idées ci-dessous et on les ajoute au plan.",
-    btnAdd:"Ajouter une idée", btnSee:"Voir les idées de l'équipe",
+    a3ulric:"Ulric : c'est ton espace. Écris ton idée ici et elle arrive directement dans la boîte mail de Jesús.",
+    fName:"Ton nom", fIdea:"Ton idée pour le Q4...", fSend:"Envoyer l'idée",
+    fThanks:"Bien reçue. Ton idée est déjà dans la boîte mail de Jesús.",
     cap1:"Le pop-up chez Moniker Coffee : bannière Marblism, gobelets jaunes et coworking plein de founders.",
     cap2:"Le merch officiel de la boutique : t-shirt pop-art, hoodie, casquette et gobelets jaunes.",
     cap3:"L'équipement : raquette Marblism, balles jaunes et serviette sur un court de San Diego.",
@@ -683,6 +704,10 @@ function setLang(lang){
   document.querySelectorAll("[data-i18n]").forEach(el=>{
     const k = el.getAttribute("data-i18n");
     if(d[k]) el.textContent = d[k];
+  });
+  document.querySelectorAll("[data-i18n-ph]").forEach(el=>{
+    const k = el.getAttribute("data-i18n-ph");
+    if(d[k]) el.placeholder = d[k];
   });
   document.getElementById("marquee").textContent = d.marquee.repeat(10);
   document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on", b.dataset.lang===lang));
@@ -723,6 +748,13 @@ const io = new IntersectionObserver(entries=>{
   });
 },{threshold:.12});
 document.querySelectorAll(".rev").forEach(el=>io.observe(el));
+
+/* thanks message after form redirect */
+try{
+  if(new URLSearchParams(location.search).get("idea")==="ok"){
+    document.getElementById("thanks").hidden = false;
+  }
+}catch(e){}
 </script>
 </body>
 </html>
