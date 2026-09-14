@@ -619,6 +619,7 @@ const io = new IntersectionObserver(entries=>{
     e.target.classList.add("in");
     e.target.querySelectorAll("[data-count]:not(.done)").forEach(el=>{el.classList.add("done");animateCount(el);});
     e.target.querySelectorAll(".seg").forEach(s=>{s.style.width = s.style.getPropertyValue("--w");});
+    e.target.querySelectorAll("video").forEach(v=>{const p=v.play(); if(p&&p.catch) p.catch(()=>{});});
     io.unobserve(e.target);
   });
 },{threshold:.12});
