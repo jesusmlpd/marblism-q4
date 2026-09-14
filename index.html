@@ -38,6 +38,7 @@
     font-family:var(--sans);
     font-size:15px;
     line-height:1.65;
+    overflow-x:clip;
     -webkit-font-smoothing:antialiased;
   }
   ::selection{background:var(--yellow);color:var(--ink)}
@@ -124,7 +125,19 @@
   .act{
     border-top:3px solid var(--ink);
     margin-top:72px;padding-top:26px;
+    position:relative;
   }
+  /* comic stickers */
+  .sticker{
+    position:absolute;pointer-events:none;user-select:none;z-index:5;
+    filter:drop-shadow(3px 5px 0 rgba(17,17,16,.14));
+    will-change:transform;
+  }
+  .sticker img{display:block;width:100%;height:auto;animation:bob 5.5s ease-in-out infinite}
+  .sticker.cup{width:clamp(90px,12vw,150px);top:-26px;right:-14px;rotate:8deg}
+  .sticker.balls{width:clamp(100px,13vw,165px);top:46px;right:-26px;rotate:-7deg}
+  .sticker.balls img{animation-delay:1.2s}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(3deg)}}
   .acthead{display:flex;align-items:flex-start;gap:18px;margin-bottom:6px}
   .idx{
     font-family:var(--display);font-weight:900;font-size:26px;line-height:1;
@@ -146,8 +159,9 @@
   }
 
   /* media */
-  figure.mock{margin:0;border:1px solid var(--ink);background:#000}
-  figure.mock img,figure.mock video{display:block;width:100%;height:auto}
+  figure.mock{margin:0;border:1px solid var(--ink);background:#000;overflow:hidden}
+  figure.mock img,figure.mock video{display:block;width:100%;height:auto;transition:transform .5s ease}
+  figure.mock:hover img,figure.mock:hover video{transform:scale(1.025)}
   .mockcap{
     font-family:var(--serif);font-style:italic;font-size:14px;color:var(--muted);
     margin:9px 0 34px;
@@ -244,9 +258,14 @@
     .rev{opacity:1;transform:none;transition:none}
     .marquee-inner{animation:none}
     .seg{transition:none}
+    .sticker img{animation:none}
+    .sticker{transform:none !important}
+    figure.mock img,figure.mock video{transition:none}
   }
   @media (max-width:640px){
     .wrap{padding:72px 20px 56px}
+    .sticker.cup{width:76px;top:-34px;right:0}
+    .sticker.balls{width:84px;top:-38px;right:0}
     .marquee{margin-left:-20px;margin-right:-20px}
     .acthead{gap:14px}
     .idx{font-size:20px;padding:8px 9px 6px}
@@ -307,6 +326,7 @@
 
   <!-- Activación 1 -->
   <section class="act rev">
+    <span class="sticker cup" data-par="0.06" aria-hidden="true"><img src="images/sticker-cup.png" alt=""></span>
     <div class="acthead">
       <span class="idx">01</span>
       <div>
@@ -367,6 +387,7 @@
 
   <!-- Activación 2 -->
   <section class="act rev">
+    <span class="sticker balls" data-par="-0.05" aria-hidden="true"><img src="images/sticker-balls.png" alt=""></span>
     <div class="acthead">
       <span class="idx">02</span>
       <div>
@@ -756,6 +777,22 @@ const io = new IntersectionObserver(entries=>{
   });
 },{threshold:.12});
 document.querySelectorAll(".rev").forEach(el=>io.observe(el));
+
+/* sticker scroll parallax */
+if(!reduced){
+  const stickers = [...document.querySelectorAll(".sticker")];
+  let ticking = false;
+  function parallax(){
+    stickers.forEach(st=>{
+      const r = st.parentElement.getBoundingClientRect();
+      const p = (window.innerHeight - r.top) * parseFloat(st.dataset.par || "0.05");
+      st.style.transform = `translateY(${p.toFixed(1)}px) rotate(${(p/14).toFixed(2)}deg)`;
+    });
+    ticking = false;
+  }
+  addEventListener("scroll", ()=>{ if(!ticking){ ticking = true; requestAnimationFrame(parallax); } }, {passive:true});
+  parallax();
+}
 
 /* thanks message after form redirect */
 try{
