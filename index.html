@@ -99,8 +99,9 @@
   .seg.s1{background:var(--ink)}
   .seg.s2{background:var(--yellow);border-left:1px solid var(--ink)}
   .seg.s3{background:var(--amber);border-left:1px solid var(--ink)}
-  .seg.s4{background:repeating-linear-gradient(-45deg,var(--yellow) 0 5px,var(--ink) 5px 10px);border-left:1px solid var(--ink)}
-  .seg.s5{background:transparent;border-left:1px dashed var(--ink)}
+  .seg.s4{background:var(--yellow-tint);border-left:1px solid var(--ink)}
+  .seg.s5{background:repeating-linear-gradient(-45deg,var(--yellow) 0 5px,var(--ink) 5px 10px);border-left:1px solid var(--ink)}
+  .seg.s6{background:transparent;border-left:1px dashed var(--ink)}
   .legend{
     display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
     border:1px solid var(--ink);border-top:0;
@@ -113,8 +114,9 @@
   .leg.l1 .k::before{background:var(--ink)}
   .leg.l2 .k::before{background:var(--yellow)}
   .leg.l3 .k::before{background:var(--amber)}
-  .leg.l4 .k::before{background:repeating-linear-gradient(-45deg,var(--yellow) 0 2px,var(--ink) 2px 4px)}
-  .leg.l5 .k::before{background:transparent;border-style:dashed}
+  .leg.l4 .k::before{background:var(--yellow-tint)}
+  .leg.l5 .k::before{background:repeating-linear-gradient(-45deg,var(--yellow) 0 2px,var(--ink) 2px 4px)}
+  .leg.l6 .k::before{background:transparent;border-style:dashed}
   .leg .v{font-family:var(--display);font-weight:900;font-size:24px;line-height:1.15;font-variant-numeric:tabular-nums}
   .budget-note{
     font-size:13px;color:var(--muted);margin-top:14px;
@@ -307,21 +309,23 @@
       <span class="t" data-i18n="hs1">Presupuesto total Q4</span>
       <span class="n" data-count="50000" data-prefix="$">$0</span>
     </div>
-    <div class="bar" id="bar" role="img" aria-label="Reparto del presupuesto: café $18,000, pickleball $7,500, brewery $12,000, viaje opcional $7,000, disponible $5,500">
-      <div class="seg s1" style="--w:36%"></div>
+    <div class="bar" id="bar" role="img" aria-label="Reparto del presupuesto: café $13,000, pickleball $7,500, brewery $12,000, yoga $5,000, viaje opcional $7,000, disponible $5,500">
+      <div class="seg s1" style="--w:26%"></div>
       <div class="seg s2" style="--w:15%"></div>
       <div class="seg s3" style="--w:24%"></div>
-      <div class="seg s4" style="--w:14%"></div>
-      <div class="seg s5" style="--w:11%"></div>
+      <div class="seg s4" style="--w:10%"></div>
+      <div class="seg s5" style="--w:14%"></div>
+      <div class="seg s6" style="--w:11%"></div>
     </div>
     <div class="legend">
-      <div class="leg l1"><span class="k" data-i18n="bb1">01 · Pop-up de café</span><span class="v">$18,000</span></div>
+      <div class="leg l1"><span class="k" data-i18n="bb1">01 · Pop-up de café</span><span class="v">$13,000</span></div>
       <div class="leg l2"><span class="k" data-i18n="bb2">02 · Pickleball</span><span class="v">$7,500</span></div>
       <div class="leg l3"><span class="k" data-i18n="bb3">03 · Entrepreneur Week</span><span class="v">$12,000</span></div>
-      <div class="leg l4"><span class="k" data-i18n="bb4">04 · Viaje (opcional)</span><span class="v">$7,000</span></div>
-      <div class="leg l5"><span class="k" data-i18n="bb5">Disponible</span><span class="v">$5,500</span></div>
+      <div class="leg l4"><span class="k" data-i18n="bb4">04 · Yoga</span><span class="v">$5,000</span></div>
+      <div class="leg l5"><span class="k" data-i18n="bb5">05 · Viaje (opcional)</span><span class="v">$7,000</span></div>
+      <div class="leg l6"><span class="k" data-i18n="bb6">Disponible</span><span class="v">$5,500</span></div>
     </div>
-    <p class="budget-note" data-i18n="bbNote">CPA objetivo $150. Break-even de las activaciones 01, 02 y 03: 250 usuarios.</p>
+    <p class="budget-note" data-i18n="bbNote">CPA objetivo $150. Break-even de las activaciones 01 a 04: 250 usuarios.</p>
   </section>
 
   <!-- Activación 1 -->
@@ -340,9 +344,9 @@
     <p class="mockcap" data-i18n="cap1">Mockup del pop-up: kiosco negro con el logo Marblism y vasos amarillos.</p>
 
     <div class="strip">
-      <div class="s"><div class="n" data-count="18000" data-prefix="$">$0</div><div class="l" data-i18n="a1s1">Costo de la activación</div></div>
+      <div class="s"><div class="n" data-count="13000" data-prefix="$">$0</div><div class="l" data-i18n="a1s1">Costo de la activación</div></div>
       <div class="s"><div class="n" data-count="150" data-prefix="$">$0</div><div class="l" data-i18n="a1s2">CPA objetivo</div></div>
-      <div class="s key"><div class="n" data-count="120">0</div><div class="l" data-i18n="a1s3">Usuarios para break-even</div></div>
+      <div class="s key"><div class="n" data-count="87">0</div><div class="l" data-i18n="a1s3">Usuarios para break-even</div></div>
       <div class="s"><div class="n" data-count="500">0</div><div class="l" data-i18n="a1s5">Cafés brandeados</div></div>
       <div class="s"><div class="n">7</div><div class="l" data-i18n="a1s4">Días de pop-up</div></div>
     </div>
@@ -362,14 +366,14 @@
     <table>
       <thead><tr><th data-i18n="th1">Escenario</th><th data-i18n="th2">Usuarios</th><th data-i18n="th3">CPA real</th><th data-i18n="th4">vs. objetivo ($150)</th></tr></thead>
       <tbody>
-        <tr><td data-i18n="r1a">Bajo</td><td class="num">90</td><td class="num">$200</td><td data-i18n="r1b">+33%, por arriba del objetivo</td></tr>
-        <tr><td data-i18n="r2a">Break-even</td><td class="num">120</td><td class="num">$150</td><td data-i18n="r2b">En el objetivo</td></tr>
-        <tr class="win"><td data-i18n="r3a">Meta</td><td class="num">180</td><td class="num">$100</td><td data-i18n="r3b">-33%, mejor que el objetivo</td></tr>
-        <tr class="win"><td data-i18n="r4a">Ideal</td><td class="num">240</td><td class="num">$75</td><td data-i18n="r4b">-50%, la mitad del CPA</td></tr>
+        <tr><td data-i18n="r1a">Bajo</td><td class="num">65</td><td class="num">$200</td><td data-i18n="r1b">+33%, por arriba del objetivo</td></tr>
+        <tr><td data-i18n="r2a">Break-even</td><td class="num">87</td><td class="num">$150</td><td data-i18n="r2b">En el objetivo</td></tr>
+        <tr class="win"><td data-i18n="r3a">Meta</td><td class="num">130</td><td class="num">$100</td><td data-i18n="r3b">-33%, mejor que el objetivo</td></tr>
+        <tr class="win"><td data-i18n="r4a">Ideal</td><td class="num">173</td><td class="num">$75</td><td data-i18n="r4b">-50%, la mitad del CPA</td></tr>
       </tbody>
     </table>
     </div>
-    <p class="note" data-i18n="a1note">La regla es simple: $18,000 entre $150 de CPA = 120 usuarios registrados para que la activación pague igual que los canales actuales. A partir del usuario 121, cada registro sale más barato que en paid. La meta operativa es 180: unos 26 registros por día durante los 7 días.</p>
+    <p class="note" data-i18n="a1note">La regla es simple: $13,000 entre $150 de CPA = 87 usuarios registrados para que la activación pague igual que los canales actuales. A partir del usuario 88, cada registro sale más barato que en paid. La meta operativa es 130: unos 19 registros por día durante los 7 días.</p>
 
     <h3 data-i18n="a1h2">Plan de contenido</h3>
     <ul>
@@ -463,10 +467,49 @@
     <p class="note" data-i18n="znote">Con $12,000 de presupuesto y CPA de $150, el break-even es de 80 usuarios. La meta operativa es 120 registros, que dejaría el CPA en $100. Brewery específica y fechas por definir.</p>
   </section>
 
-  <!-- Activación 4: Work from San Diego -->
-  <section class="act optional rev">
+  <!-- Activación 4: Yoga -->
+  <section class="act rev">
     <div class="acthead">
       <span class="idx">04</span>
+      <div>
+        <span class="actlabel" data-i18n="ylabel">Yoga con tapetes Marblism · San Diego</span>
+        <h2 data-i18n="ytitle">Yoga para founders</h2>
+      </div>
+    </div>
+    <p class="tagline" data-i18n="ytag">Clases de yoga al amanecer sobre tapetes amarillos Marblism: tomas la clase, te registras y el tapete es tuyo.</p>
+
+    <figure class="mock"><img src="images/mockup-yoga.png" alt="Clase de yoga con tapetes amarillos Marblism en San Diego" loading="lazy"></figure>
+    <p class="mockcap" data-i18n="cap5">La clase al amanecer: filas de tapetes amarillos Marblism en el parque.</p>
+
+    <div class="strip">
+      <div class="s"><div class="n" data-count="5000" data-prefix="$">$0</div><div class="l" data-i18n="ys1">Presupuesto de la activación</div></div>
+      <div class="s"><div class="n" data-count="150" data-prefix="$">$0</div><div class="l" data-i18n="ys2">CPA objetivo</div></div>
+      <div class="s key"><div class="n" data-count="34">0</div><div class="l" data-i18n="ys3">Usuarios para break-even</div></div>
+      <div class="s"><div class="n" data-count="150">0</div><div class="l" data-i18n="ys4">Tapetes brandeados</div></div>
+      <div class="s"><div class="n" data-count="50">0</div><div class="l" data-i18n="ys5">Meta de usuarios</div></div>
+    </div>
+
+    <h3 data-i18n="yh1">Concepto</h3>
+    <ul>
+      <li><span class="phase" data-i18n="y1a">El lugar:</span> <span data-i18n="y1b">clases al amanecer en un parque o estudio de San Diego, la escena wellness donde también vive nuestro ICP.</span></li>
+      <li><span class="phase" data-i18n="y2a">La mecánica:</span> <span data-i18n="y2b">te registras en Marblism con el QR al llegar, tomas la clase y el tapete amarillo se va contigo a casa.</span></li>
+      <li><span class="phase" data-i18n="y3a">Por qué vale:</span> <span data-i18n="y3b">el tapete es merch que se usa cada semana durante años: el logo se queda en la sala del founder, no en un cajón.</span></li>
+    </ul>
+
+    <h3 data-i18n="yh2">Contenido</h3>
+    <ul>
+      <li data-i18n="yk1">Reel con drone del grid de tapetes amarillos en el pasto.</li>
+      <li data-i18n="yk2">Serie "respira y construye": mini entrevistas post-clase sobre qué están construyendo.</li>
+      <li data-i18n="yk3">UGC de los asistentes con su tapete, con hashtag propio de la activación.</li>
+    </ul>
+
+    <p class="note" data-i18n="ynote">Con $5,000 de presupuesto y CPA de $150, el break-even es de 34 usuarios. La meta operativa es 50 registros, que dejaría el CPA en $100. Estudio o parque y fechas por definir.</p>
+  </section>
+
+  <!-- Activación 5: Work from San Diego -->
+  <section class="act optional rev">
+    <div class="acthead">
+      <span class="idx">05</span>
       <div>
         <span class="actlabel" data-i18n="a4badge">Opcional · Producción de contenido</span>
         <h2 data-i18n="a4title">Work from San Diego</h2>
@@ -519,7 +562,7 @@ const I18N = {
     title1:"Activaciones",
     sub:"Las activaciones de marca del trimestre: presupuesto, meta de usuarios y plan de contenido de cada una.",
     hs1:"Presupuesto total Q4",
-    bb1:"01 · Pop-up de café", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Viaje (opcional)", bb5:"Disponible",
+    bb1:"01 · Pop-up de café", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Yoga", bb5:"05 · Viaje (opcional)", bb6:"Disponible",
     a1badge:"Pop-up en Moniker Coffee · San Diego · 7 días",
     a1title:"Café gratis para emprendedores",
     a1tag:"Tomamos Moniker Coffee, specialty coffee con coworking en San Diego: los emprendedores toman café gratis toda la semana, prueban Marblism y hay workshops en el espacio.",
@@ -534,7 +577,7 @@ const I18N = {
     r2a:"Break-even", r2b:"En el objetivo",
     r3a:"Meta", r3b:"-33%, mejor que el objetivo",
     r4a:"Ideal", r4b:"-50%, la mitad del CPA",
-    a1note:"La regla es simple: $18,000 entre $150 de CPA = 120 usuarios registrados para que la activación pague igual que los canales actuales. A partir del usuario 121, cada registro sale más barato que en paid. La meta operativa es 180: unos 26 registros por día durante los 7 días.",
+    a1note:"La regla es simple: $13,000 entre $150 de CPA = 87 usuarios registrados para que la activación pague igual que los canales actuales. A partir del usuario 88, cada registro sale más barato que en paid. La meta operativa es 130: unos 19 registros por día durante los 7 días.",
     p1:"Pre (semana -1):", c1:'teaser en redes con la ubicación y el gancho "café gratis toda la semana para emprendedores", invitación directa a comunidades de founders y geo-ads en la zona.',
     p2:"Durante (día 1 a 7):", c2:'un reel diario de UGC, micro-entrevistas de 30 segundos con la pregunta "¿qué estás construyendo?", demo de Marblism en pantalla y QR en cada vaso que lleva al registro.',
     p3:"Durante:", c3:"historias en vivo cada mañana con contador de cafés regalados como mecánica de contenido.",
@@ -565,6 +608,18 @@ const I18N = {
     zk3:"UGC de la semana con hashtag propio de la Entrepreneur Week.",
     znote:"Con $12,000 de presupuesto y CPA de $150, el break-even es de 80 usuarios. La meta operativa es 120 registros, que dejaría el CPA en $100. Brewery específica y fechas por definir.",
     cap4:"La Entrepreneur Week: la brewery con el banner Marblism y cervezas para dueños de negocio.",
+    ylabel:"Yoga con tapetes Marblism · San Diego", ytitle:"Yoga para founders",
+    ytag:"Clases de yoga al amanecer sobre tapetes amarillos Marblism: tomas la clase, te registras y el tapete es tuyo.",
+    ys1:"Presupuesto de la activación", ys2:"CPA objetivo", ys3:"Usuarios para break-even", ys4:"Tapetes brandeados", ys5:"Meta de usuarios",
+    yh1:"Concepto", yh2:"Contenido",
+    y1a:"El lugar:", y1b:"clases al amanecer en un parque o estudio de San Diego, la escena wellness donde también vive nuestro ICP.",
+    y2a:"La mecánica:", y2b:"te registras en Marblism con el QR al llegar, tomas la clase y el tapete amarillo se va contigo a casa.",
+    y3a:"Por qué vale:", y3b:"el tapete es merch que se usa cada semana durante años: el logo se queda en la sala del founder, no en un cajón.",
+    yk1:"Reel con drone del grid de tapetes amarillos en el pasto.",
+    yk2:'Serie "respira y construye": mini entrevistas post-clase sobre qué están construyendo.',
+    yk3:"UGC de los asistentes con su tapete, con hashtag propio de la activación.",
+    ynote:"Con $5,000 de presupuesto y CPA de $150, el break-even es de 34 usuarios. La meta operativa es 50 registros, que dejaría el CPA en $100. Estudio o parque y fechas por definir.",
+    cap5:"La clase al amanecer: filas de tapetes amarillos Marblism en el parque.",
     a4badge:"Opcional · Producción de contenido", a4title:"Work from San Diego",
     a4tag:"El equipo se instala una semana en San Diego durante las activaciones y todo el contenido se produce en sitio.",
     a4s1:"Costo del viaje", a4s2:"Semana en sitio", a4s3:"Personas del equipo",
@@ -582,14 +637,14 @@ const I18N = {
     cap2:"La merch oficial de la tienda: playera pop-art, hoodie, gorra y vasos amarillos.",
     cap3:"El gear en cancha: la pala Marblism, toalla y gorra en un partido real en San Diego.",
     footer:"Marblism · Activaciones Q4 · Documento interno para compartir",
-    marquee:"Café gratis · Free coffee · Café gratuit · Pickleball · Entrepreneur Week · San Diego · Q4 · ",
-    bbNote:'CPA objetivo $150. Break-even de las activaciones 01, 02 y 03: 250 usuarios.'
+    marquee:"Café gratis · Free coffee · Café gratuit · Pickleball · Entrepreneur Week · Yoga · San Diego · Q4 · ",
+    bbNote:'CPA objetivo $150. Break-even de las activaciones 01 a 04: 250 usuarios.'
   },
   en: {
     title1:"Activations",
     sub:"The quarter's brand activations: budget, user targets and content plan for each one.",
     hs1:"Total Q4 budget",
-    bb1:"01 · Coffee pop-up", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Trip (optional)", bb5:"Available",
+    bb1:"01 · Coffee pop-up", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Yoga", bb5:"05 · Trip (optional)", bb6:"Available",
     a1badge:"Pop-up at Moniker Coffee · San Diego · 7 days",
     a1title:"Free coffee for entrepreneurs",
     a1tag:"We take over Moniker Coffee, a specialty coffee shop with a coworking space in San Diego: entrepreneurs drink free coffee all week, try Marblism and join workshops in the space.",
@@ -604,7 +659,7 @@ const I18N = {
     r2a:"Break-even", r2b:"On target",
     r3a:"Goal", r3b:"-33%, better than target",
     r4a:"Ideal", r4b:"-50%, half the CPA",
-    a1note:"The rule is simple: $18,000 divided by a $150 CPA = 120 signups for the activation to pay off like our current channels. From user 121 on, every signup is cheaper than paid. The operating goal is 180: about 26 signups per day across the 7 days.",
+    a1note:"The rule is simple: $13,000 divided by a $150 CPA = 87 signups for the activation to pay off like our current channels. From user 88 on, every signup is cheaper than paid. The operating goal is 130: about 19 signups per day across the 7 days.",
     p1:"Pre (week -1):", c1:'social teaser with the location and the hook "free coffee all week for entrepreneurs", direct invites to founder communities and geo-ads around the area.',
     p2:"During (day 1 to 7):", c2:'one daily UGC reel, 30-second micro-interviews asking "what are you building?", Marblism demo on screen and a QR on every cup that goes straight to signup.',
     p3:"During:", c3:"live stories every morning with a counter of coffees given away as a content mechanic.",
@@ -635,6 +690,18 @@ const I18N = {
     zk3:"Week-long UGC with the Entrepreneur Week's own hashtag.",
     znote:"With a $12,000 budget and a $150 CPA, break-even is 80 users. The operating goal is 120 signups, which would put the CPA at $100. Specific brewery and dates still to define.",
     cap4:"Entrepreneur Week: the brewery with the Marblism banner and beers for business owners.",
+    ylabel:"Yoga on Marblism mats · San Diego", ytitle:"Yoga for founders",
+    ytag:"Sunrise yoga classes on yellow Marblism mats: take the class, sign up, and the mat goes home with you.",
+    ys1:"Activation budget", ys2:"Target CPA", ys3:"Users for break-even", ys4:"Branded mats", ys5:"User goal",
+    yh1:"Concept", yh2:"Content",
+    y1a:"The venue:", y1b:"sunrise classes at a San Diego park or studio, the wellness scene where our ICP also lives.",
+    y2a:"The mechanic:", y2b:"you sign up for Marblism with the QR on arrival, take the class, and the yellow mat goes home with you.",
+    y3a:"Why it's worth it:", y3b:"the mat is merch that gets used weekly for years: the logo lives in the founder's living room, not in a drawer.",
+    yk1:"Drone reel of the grid of yellow mats on the grass.",
+    yk2:'"Breathe and build" series: post-class mini interviews about what they are building.',
+    yk3:"Attendee UGC with their mat, with the activation's own hashtag.",
+    ynote:"With a $5,000 budget and a $150 CPA, break-even is 34 users. The operating goal is 50 signups, which would put the CPA at $100. Studio or park and dates still to define.",
+    cap5:"The sunrise class: rows of yellow Marblism mats in the park.",
     a4badge:"Optional · Content production", a4title:"Work from San Diego",
     a4tag:"The team sets up in San Diego for a week during the activations and all the content gets produced on site.",
     a4s1:"Trip cost", a4s2:"Week on site", a4s3:"Team members",
@@ -652,14 +719,14 @@ const I18N = {
     cap2:"The official store merch: pop-art tee, hoodie, cap and yellow cups.",
     cap3:"The gear on court: the Marblism paddle, towel and cap during a real match in San Diego.",
     footer:"Marblism · Q4 Activations · Internal doc to share",
-    marquee:"Free coffee · Café gratis · Café gratuit · Pickleball · Entrepreneur Week · San Diego · Q4 · ",
-    bbNote:"Target CPA $150. Break-even for activations 01, 02 and 03: 250 users."
+    marquee:"Free coffee · Café gratis · Café gratuit · Pickleball · Entrepreneur Week · Yoga · San Diego · Q4 · ",
+    bbNote:"Target CPA $150. Break-even for activations 01 to 04: 250 users."
   },
   fr: {
     title1:"Activations",
     sub:"Les activations de marque du trimestre : budget, objectif d'utilisateurs et plan de contenu pour chacune.",
     hs1:"Budget total Q4",
-    bb1:"01 · Pop-up café", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Voyage (optionnel)", bb5:"Disponible",
+    bb1:"01 · Pop-up café", bb2:"02 · Pickleball", bb3:"03 · Entrepreneur Week", bb4:"04 · Yoga", bb5:"05 · Voyage (optionnel)", bb6:"Disponible",
     a1badge:"Pop-up chez Moniker Coffee · San Diego · 7 jours",
     a1title:"Café gratuit pour les entrepreneurs",
     a1tag:"On investit Moniker Coffee, un specialty coffee avec espace de coworking à San Diego : les entrepreneurs boivent un café gratuit toute la semaine, essaient Marblism et participent aux workshops sur place.",
@@ -674,7 +741,7 @@ const I18N = {
     r2a:"Break-even", r2b:"Sur la cible",
     r3a:"Objectif", r3b:"-33 %, mieux que la cible",
     r4a:"Idéal", r4b:"-50 %, la moitié du CPA",
-    a1note:"La règle est simple : 18 000 $ divisés par un CPA de 150 $ = 120 inscriptions pour que l'activation soit aussi rentable que nos canaux actuels. À partir de l'utilisateur 121, chaque inscription coûte moins cher que le paid. L'objectif opérationnel est 180 : environ 26 inscriptions par jour pendant les 7 jours.",
+    a1note:"La règle est simple : 13 000 $ divisés par un CPA de 150 $ = 87 inscriptions pour que l'activation soit aussi rentable que nos canaux actuels. À partir de l'utilisateur 88, chaque inscription coûte moins cher que le paid. L'objectif opérationnel est 130 : environ 19 inscriptions par jour pendant les 7 jours.",
     p1:"Avant (semaine -1) :", c1:"teaser sur les réseaux avec le lieu et l'accroche « café gratuit toute la semaine pour les entrepreneurs », invitations directes aux communautés de founders et geo-ads dans la zone.",
     p2:"Pendant (jour 1 à 7) :", c2:"un reel UGC quotidien, micro-interviews de 30 secondes avec la question « qu'est-ce que tu construis ? », démo de Marblism à l'écran et QR sur chaque gobelet menant à l'inscription.",
     p3:"Pendant :", c3:"stories en direct chaque matin avec un compteur de cafés offerts comme mécanique de contenu.",
@@ -705,6 +772,18 @@ const I18N = {
     zk3:"UGC de la semaine avec le hashtag propre à l'Entrepreneur Week.",
     znote:"Avec un budget de 12 000 $ et un CPA de 150 $, le break-even est de 80 utilisateurs. L'objectif opérationnel est 120 inscriptions, ce qui mettrait le CPA à 100 $. Brasserie précise et dates à définir.",
     cap4:"L'Entrepreneur Week : la brasserie avec la bannière Marblism et des bières pour les patrons.",
+    ylabel:"Yoga sur tapis Marblism · San Diego", ytitle:"Yoga pour founders",
+    ytag:"Cours de yoga au lever du soleil sur des tapis jaunes Marblism : tu prends le cours, tu t'inscris et le tapis est à toi.",
+    ys1:"Budget de l'activation", ys2:"CPA cible", ys3:"Utilisateurs pour le break-even", ys4:"Tapis brandés", ys5:"Objectif d'utilisateurs",
+    yh1:"Concept", yh2:"Contenu",
+    y1a:"Le lieu :", y1b:"cours au lever du soleil dans un parc ou un studio de San Diego, la scène wellness où vit aussi notre ICP.",
+    y2a:"La mécanique :", y2b:"tu t'inscris à Marblism via le QR en arrivant, tu prends le cours et le tapis jaune repart avec toi.",
+    y3a:"Pourquoi ça vaut le coup :", y3b:"le tapis est du merch utilisé chaque semaine pendant des années : le logo vit dans le salon du founder, pas dans un tiroir.",
+    yk1:"Reel au drone de la grille de tapis jaunes sur l'herbe.",
+    yk2:"Série « respire et construis » : mini-interviews après le cours sur ce qu'ils construisent.",
+    yk3:"UGC des participants avec leur tapis, avec le hashtag propre à l'activation.",
+    ynote:"Avec un budget de 5 000 $ et un CPA de 150 $, le break-even est de 34 utilisateurs. L'objectif opérationnel est 50 inscriptions, ce qui mettrait le CPA à 100 $. Studio ou parc et dates à définir.",
+    cap5:"Le cours au lever du soleil : des rangées de tapis jaunes Marblism dans le parc.",
     a4badge:"Optionnel · Production de contenu", a4title:"Work from San Diego",
     a4tag:"L'équipe s'installe une semaine à San Diego pendant les activations et tout le contenu est produit sur place.",
     a4s1:"Coût du voyage", a4s2:"Semaine sur place", a4s3:"Membres de l'équipe",
@@ -722,8 +801,8 @@ const I18N = {
     cap2:"Le merch officiel de la boutique : t-shirt pop-art, hoodie, casquette et gobelets jaunes.",
     cap3:"L'équipement sur le court : la raquette Marblism, la serviette et la casquette pendant un vrai match à San Diego.",
     footer:"Marblism · Activations Q4 · Document interne à partager",
-    marquee:"Café gratuit · Free coffee · Café gratis · Pickleball · Entrepreneur Week · San Diego · Q4 · ",
-    bbNote:"CPA cible 150 $. Break-even des activations 01, 02 et 03 : 250 utilisateurs."
+    marquee:"Café gratuit · Free coffee · Café gratis · Pickleball · Entrepreneur Week · Yoga · San Diego · Q4 · ",
+    bbNote:"CPA cible 150 $. Break-even des activations 01 à 04 : 250 utilisateurs."
   }
 };
 
